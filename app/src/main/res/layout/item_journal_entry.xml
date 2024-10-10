@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout file for an individual journal entry item in the RecyclerView.
+    This layout displays the title and content of a journal entry with a delete button.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!--
+        TextView for displaying the title of the journal entry.
+        Uses bold text style and a larger font size for emphasis.
+    -->
+    <TextView
+        android:id="@+id/text_view_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <!--
+        TextView for displaying the content of the journal entry.
+        Limits the content display to 2 lines and truncates with an ellipsis if it overflows.
+    -->
+    <TextView
+        android:id="@+id/text_view_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="14sp" />
+
+    <!--
+        Button for deleting the journal entry.
+        Positioned at the end of the layout to align with the right side.
+    -->
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:layout_gravity="end" />
+
+</LinearLayout>

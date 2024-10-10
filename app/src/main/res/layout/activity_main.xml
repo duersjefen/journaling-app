@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout file for the main screen of the app, which displays a list of journal entries.
+    The layout includes a button for adding new entries and a RecyclerView for displaying the entries.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        Button to navigate to the Add Entry screen.
+        Allows the user to add a new journal entry.
+        Positioned at the end (right) of the layout with a margin for better spacing.
+    -->
+    <Button
+        android:id="@+id/button_add_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_entry"
+        android:layout_gravity="end"
+        android:layout_margin="16dp" />
+
+    <!--
+        RecyclerView for displaying a list of journal entries.
+        Uses the full width and height of the screen below the add button.
+        Padding is added for better spacing between the items, and clipToPadding is set to false
+        to ensure that padding is maintained even when the list scrolls.
+    -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_entries"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+</LinearLayout>

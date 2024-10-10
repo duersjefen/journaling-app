@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout file for the Add Entry screen, allowing the user to input a new journal entry.
+    Contains fields for the entry title, content, and a save button to submit the entry.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!--
+        EditText for inputting the title of the journal entry.
+        Provides a hint to the user and accepts single-line text input.
+        Autofill hints are left empty to prevent unwanted suggestions.
+    -->
+    <EditText
+        android:id="@+id/edit_text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/title"
+        android:inputType="text" />
+
+    <!--
+        EditText for inputting the content of the journal entry.
+        Allows multi-line input to accommodate longer entries and has a minimum height of 5 lines.
+        Provides a hint to the user for guidance.
+        Autofill hints are left empty to prevent unwanted suggestions.
+    -->
+    <EditText
+        android:id="@+id/edit_text_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/content"
+        android:inputType="textMultiLine"
+        android:minLines="5" />
+
+    <!--
+        Button for saving the new or edited journal entry.
+        Positioned at the end of the layout with a top margin for better spacing.
+    -->
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

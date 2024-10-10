@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    The AndroidManifest.xml file defines essential information about the app for the Android system.
+    It includes details such as the application components, permissions, and overall configuration.
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--
+        The <application> element contains attributes and nested components such as activities.
+        It defines properties like the app's icon, label, theme, backup settings, and more.
+    -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,19 +18,36 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.JournalingApp"
-        tools:targetApi="31">
+        android:theme="@style/Theme.JournalingApp">
+
+        <!--
+            Activity for adding a new journal entry.
+            This activity is not exported, meaning it cannot be accessed by other apps.
+            It uses the same theme as the rest of the app.
+        -->
+        <activity
+            android:name=".AddEntryActivity"
+            android:exported="false"
+            android:label="@string/title_activity_add_entry"
+            android:theme="@style/Theme.JournalingApp" />
+
+        <!--
+            MainActivity serves as the entry point of the app.
+            It is exported, allowing it to be accessed when launching the app.
+            The intent-filter defines this activity as the main launcher activity of the app,
+            making it the first screen the user sees when the app is opened.
+        -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.JournalingApp">
             <intent-filter>
+                <!-- Declares that this activity should respond to the main action. -->
                 <action android:name="android.intent.action.MAIN" />
 
+                <!-- Declares that this activity should be shown in the app launcher. -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
